@@ -1,0 +1,105 @@
+/* Light palette: soft violet, blue and mint light over a near-white canvas. */
+@media screen {
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --page-bg: #faf9fe;
+    --ink: #384158;
+    --heading: #252d4c;
+    --muted: #606b83;
+    --accent: #5353a6;
+    --accent-hover: #146f80;
+    --line: rgba(108, 96, 178, .19);
+  }
+  [data-theme="light"] body {
+    background-image:
+      radial-gradient(ellipse 680px 640px at 0% 0%, rgba(165, 142, 238, .25), transparent 73%),
+      radial-gradient(ellipse 580px 500px at 100% 15%, rgba(115, 189, 234, .18), transparent 74%),
+      radial-gradient(ellipse 620px 540px at 3% 88%, rgba(232, 170, 208, .16), transparent 75%),
+      radial-gradient(ellipse 680px 630px at 95% 95%, rgba(101, 206, 186, .20), transparent 73%),
+      linear-gradient(135deg, #faf8ff 0%, #fdfdff 48%, #f4fbfa 100%);
+  }
+  [data-theme="light"] header h1 {
+    color: var(--heading);
+    background-image: linear-gradient(110deg, #7446ad 5%, #425caf 55%, #16808b 100%);
+  }
+  [data-theme="light"] .profile-role { color: #62509b; }
+  [data-theme="light"] section h2 {
+    color: #535097;
+    background: linear-gradient(100deg, #6849a0, #365eaa 48%, #1b7980);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  [data-theme="light"] section h2::after {
+    background: linear-gradient(90deg, rgba(143, 101, 215, .34), rgba(75, 150, 202, .25) 45%, rgba(65, 181, 159, .12) 80%, transparent);
+  }
+  [data-theme="light"] .profile-cv a {
+    border-color: rgba(255, 255, 255, .6);
+    background: linear-gradient(115deg, #7651b4 0%, #4265b7 52%, #207b8b 100%);
+    box-shadow: 0 5px 18px rgba(101, 79, 176, .22), inset 0 1px rgba(255, 255, 255, .24);
+  }
+  [data-theme="light"] .profile-cv a:hover,
+  [data-theme="light"] .profile-cv a:focus-visible {
+    background: linear-gradient(115deg, #6843a9, #3658a6 52%, #176c7b);
+    box-shadow: 0 7px 22px rgba(95, 83, 170, .29), inset 0 1px rgba(255, 255, 255, .3);
+  }
+  [data-theme="light"] a:focus-visible { outline-color: var(--accent-hover); }
+  [data-theme="light"] .publications ol.bibliography li .title a { color: #455a9c; }
+  [data-theme="light"] .publications ol.bibliography li .title a:hover { color: var(--accent-hover); }
+  [data-theme="light"] .publications ol.bibliography li .links a.btn {
+    color: #55539b;
+    border-color: rgba(125, 109, 188, .25);
+    background: linear-gradient(120deg, rgba(175, 148, 227, .16), rgba(110, 167, 223, .10) 55%, rgba(83, 179, 165, .10));
+    box-shadow: inset 0 1px rgba(255, 255, 255, .8);
+  }
+  [data-theme="light"] .publications ol.bibliography li .links a.btn:hover {
+    color: #225e83;
+    border-color: rgba(91, 120, 182, .45);
+    background: linear-gradient(120deg, rgba(175, 148, 227, .26), rgba(110, 167, 223, .18) 55%, rgba(83, 179, 165, .19));
+  }
+  [data-theme="light"] .publications ol.bibliography li .teaser {
+    box-shadow: 0 5px 18px rgba(98, 78, 158, .13);
+    outline-color: rgba(119, 108, 181, .18);
+  }
+  [data-theme="light"] .profile-portrait {
+    background: linear-gradient(140deg, #d5b9f2 5%, #909fe5 40%, #91d9d0 80%, #d4f2dd);
+    box-shadow: 0 9px 30px rgba(107, 88, 167, .20), 0 0 0 6px rgba(255, 255, 255, .5);
+  }
+  [data-theme="light"] .theme-toggle {
+    background: linear-gradient(135deg, rgba(247, 240, 255, .94), rgba(235, 250, 249, .94));
+    box-shadow: 0 4px 16px rgba(104, 88, 163, .14), inset 0 1px rgba(255, 255, 255, .9);
+  }
+  [data-theme="light"] ::selection { background: #e1d8f4; color: #292e4c; }
+}
+
+.theme-toggle {
+  position: fixed;
+  top: max(18px, env(safe-area-inset-top));
+  right: max(20px, env(safe-area-inset-right));
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--page-bg);
+  color: var(--accent);
+  box-shadow: 0 3px 14px rgba(20, 45, 78, .10);
+  cursor: pointer;
+  transition: color .18s ease, border-color .18s ease;
+}
+.theme-toggle[hidden] { display: none; }
+.theme-toggle svg { width: 22px; height: 22px; }
+.theme-toggle:hover { color: var(--accent-hover); border-color: var(--accent-hover); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.theme-moon, [data-theme="light"] .theme-sun { display: none; }
+[data-theme="light"] .theme-moon { display: block; }
+@media (prefers-reduced-motion: reduce) { .theme-toggle { transition: none; } }
+@media (forced-colors: active) {
+  [data-theme="light"] header h1,
+  [data-theme="light"] section h2 { background: none; -webkit-text-fill-color: CanvasText; }
+}
+@media print { .theme-toggle { display: none; } }

@@ -1,0 +1,61 @@
+/* Original component from https://iconlab.negarmehr.com/HuGo/ (CC BY-SA 4.0). Desktop sizing retained within a scaled panel. */
+.hugo-panel .zs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.hugo-panel .zs-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.hugo-panel .zs-label {
+  flex: 0 0 6.5rem;
+  text-align: left;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  color: #666;
+}
+
+.hugo-panel .zs-label b {
+  display: block;
+  font-size: 1.05rem;
+  color: #1f8a4c;
+}
+
+.hugo-panel .zs-clips {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.hugo-panel .zs-clips video {
+  border-radius: 5px;
+  display: block;
+}
+
+/* Landscape: fills the space left of the column, so it ends flush on the right. */
+.hugo-panel .zs-row:not(.is-tall) .zs-clips video {
+  width: calc((100% - 1rem) / 3);
+  height: auto;
+}
+
+/* Portrait: sized by height, so it runs short of the right edge by design. */
+.hugo-panel .zs-row.is-tall .zs-clips video {
+  height: 235px;
+  width: auto;
+}
+
+
+.publications ol.bibliography li .teaser.hugo-panel-window { position: relative; overflow: hidden; background: #f5f5f5; cursor: pointer; }
+.hugo-panel-window:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.hugo-panel { position: absolute; width: 800px; padding: 18px 20px 24px; box-sizing: border-box; background: #f5f5f5; transform-origin: top left; font-family: 'Google Sans', Arial, sans-serif; }
+.hugo-panel .zs-grid { margin-top: 0; }
+.hugo-panel video { max-width: none; }
+.hugo-panel .zs-label b { font-weight: 700; }
