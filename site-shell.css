@@ -1,0 +1,107 @@
+/* Shared navigation and a slightly more comfortable reading size. */
+html { scroll-padding-top: 88px; }
+body { font-size: 18px; line-height: 1.55; padding-top: 64px; }
+.site-topbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 8;
+  height: 64px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--line);
+  background: rgba(14, 23, 40, .92);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+.site-topbar::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(130, 152, 230, .34), rgba(73, 183, 172, .28), transparent);
+  pointer-events: none;
+}
+[data-theme="light"] .site-topbar { background: rgba(250, 249, 254, .92); }
+.topbar-inner {
+  max-width: 960px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-name { color: var(--heading); font-size: 23px; font-weight: 600; letter-spacing: .2px; }
+.site-name:hover { text-decoration: none; }
+.topbar-nav { display: flex; align-items: center; gap: 26px; margin-left: auto; font-size: 16px; line-height: 1.4; }
+.topbar-nav a { color: var(--accent); padding: 12px 0; }
+.topbar-nav a:hover, .topbar-nav a:focus-visible { color: var(--accent); }
+.site-topbar .theme-toggle { position: static; flex: 0 0 44px; }
+header { top: 64px; width: 260px; padding-top: 40px; text-align: left; }
+header h1 { font-size: 28px; font-weight: 600; margin-bottom: 10px; }
+header .profile-portrait { margin-left: 0; margin-right: 0; }
+.profile-intro { margin: 0 0 22px; font-size: 15.5px; line-height: 1.5; color: var(--muted); }
+.profile-intro .profile-position { color: #91baf1; }
+[data-theme="light"] .profile-intro .profile-position { color: #62509b; }
+.profile-details { display: grid; gap: 13px; font-size: 14.5px; line-height: 1.4; }
+.profile-detail { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 11px; align-items: start; color: var(--muted); }
+.profile-detail svg { width: 16px; height: 16px; margin-top: 2px; color: var(--accent); opacity: .8; }
+.profile-detail a { color: var(--accent); overflow-wrap: anywhere; }
+.profile-detail a:hover, .profile-detail a:focus-visible { color: var(--accent-hover); }
+.profile-detail-email a { display: block; font-size: 13px; line-height: 20px; }
+.profile-detail-email span { min-width: 0; }
+@media screen and (forced-colors: none) {
+  [data-theme="dark"] header h1 { width: fit-content; }
+  [data-theme="dark"] .site-name,
+  [data-theme="dark"] section h2 {
+    color: #edf5ff;
+    background-image: linear-gradient(110deg, #ffffff 15%, #c7defa 65%, #a6ddd9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  [data-theme="dark"] section h2 { background-image: linear-gradient(110deg, #ffffff 0, #c7defa 180px, #a6ddd9 340px); }
+}
+section { padding-top: 45px; }
+.pub-image { width: 210px; flex-basis: 210px; }
+.publications ol.bibliography li .teaser { width: 210px; height: 152px; }
+.author, .periodical, .pub-summary { font-size: 15.5px; }
+.title { font-size: 17px; }
+.links .btn { font-size: 13px; }
+.entry-title > span { font-size: 14px; }
+.site-credit small { font-size: 12px; }
+@media (max-width: 960px) {
+  body { padding: 80px 20px 15px; }
+  header { top: auto; width: auto; max-width: 650px; margin: 0 auto; padding: 16px 0 32px; }
+  section { padding-top: 28px; }
+}
+@media (min-width: 961px) and (max-height: 820px) {
+  header { position: sticky; top: 80px; padding-top: 24px; padding-bottom: 24px; }
+  .profile-portrait { width: 156px; height: 156px; margin-bottom: 14px; }
+}
+@media (max-width: 700px) {
+  html { scroll-padding-top: 128px; }
+  body { padding-top: 124px; }
+  .site-topbar { height: 108px; }
+  .topbar-inner { display: grid; grid-template-columns: 1fr 44px; grid-template-rows: 60px 48px; gap: 0 16px; }
+  .site-topbar .theme-toggle { grid-column: 2; grid-row: 1; }
+  .topbar-nav { grid-column: 1 / -1; grid-row: 2; margin: 0; gap: 20px; overflow-x: auto; white-space: nowrap; font-size: 14px; }
+  .topbar-nav a { flex: 0 0 auto; }
+}
+@media (max-width: 480px) {
+  .topbar-inner { padding: 0 20px; }
+  .site-name { font-size: 22px; }
+}
+@media (min-width: 481px) and (max-width: 600px) {
+  .pub-image { width: 170px; flex-basis: 170px; }
+  .publications ol.bibliography li .teaser { width: 170px; height: 123px; }
+}
+@media (max-width: 480px) {
+  .pub-image { width: min(230px, 100%); }
+  .publications ol.bibliography li .teaser { width: 100%; height: auto; aspect-ratio: 210 / 152; }
+}
+@media print {
+  .site-topbar { display: none; }
+  body { padding-top: 0; font-size: 12pt; }
+  header { top: auto; }
+}
