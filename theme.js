@@ -1,7 +1,6 @@
 (() => {
   const root = document.documentElement;
   const key = 'shizhao-theme';
-  const system = window.matchMedia('(prefers-color-scheme: dark)');
   const valid = value => value === 'light' || value === 'dark';
   let preference = null;
   try {
@@ -11,7 +10,7 @@
 
   let button;
   const apply = () => {
-    const theme = preference || (system.matches ? 'dark' : 'light');
+    const theme = preference || 'dark';
     root.dataset.theme = theme;
     if (button) {
       const label = `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`;
@@ -32,7 +31,6 @@
       apply();
     });
   });
-  system.addEventListener('change', () => { if (!preference) apply(); });
   window.addEventListener('storage', event => {
     if (event.key !== key && event.key !== null) return;
     preference = valid(event.newValue) ? event.newValue : null;
