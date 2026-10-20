@@ -33,7 +33,7 @@ body { font-size: 18px; line-height: 1.55; padding-top: 64px; }
 }
 .site-name { color: var(--heading); font-size: 23px; font-weight: 600; letter-spacing: .2px; }
 .site-name:hover { text-decoration: none; }
-.topbar-nav { display: flex; align-items: center; gap: 26px; margin-left: auto; font-size: 16px; line-height: 1.4; }
+.topbar-nav { display: flex; align-items: center; gap: 22px; margin-left: auto; font-size: 16px; line-height: 1.4; }
 .topbar-nav a { color: var(--accent); padding: 12px 0; }
 .topbar-nav a:hover, .topbar-nav a:focus-visible { color: var(--accent); }
 .site-topbar .theme-toggle { position: static; flex: 0 0 44px; }
@@ -79,7 +79,7 @@ section { padding-top: 45px; }
   header { position: sticky; top: 80px; padding-top: 24px; padding-bottom: 24px; }
   .profile-portrait { width: 156px; height: 156px; margin-bottom: 14px; }
 }
-@media (max-width: 700px) {
+@media (max-width: 960px) {
   html { scroll-padding-top: 128px; }
   body { padding-top: 124px; }
   .site-topbar { height: 108px; }
