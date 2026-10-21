@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#2158bd"/><stop offset="1" stop-color="#137878"/></linearGradient></defs><rect width="64" height="64" rx="8" fill="url(#g)"/><text x="32" y="47" text-anchor="middle" font-family="Georgia,serif" font-size="48" fill="white">Y</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Shizhao Ye</title>
+  <defs>
+    <linearGradient id="letters" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f4f8ff"/>
+      <stop offset="0.5" stop-color="#bad9ff"/>
+      <stop offset="1" stop-color="#9ce1d7"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#101d34"/>
+  <text x="31" y="43" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" letter-spacing="-1" fill="url(#letters)">SY</text>
+</svg>
