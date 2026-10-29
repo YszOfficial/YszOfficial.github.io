@@ -63,6 +63,9 @@ header .profile-portrait { margin-left: 0; margin-right: 0; }
   [data-theme="dark"] section h2 { background-image: linear-gradient(110deg, #ffffff 0, #c7defa 180px, #a6ddd9 340px); }
 }
 section { padding-top: 45px; }
+#research { margin-bottom: 12px; }
+#research + ul { margin-bottom: 8px; }
+#research + ul li { margin-bottom: 0; }
 .pub-image { width: 210px; flex-basis: 210px; }
 .publications ol.bibliography li .teaser { width: 210px; height: 152px; }
 .author, .periodical, .pub-summary { font-size: 15.5px; }
